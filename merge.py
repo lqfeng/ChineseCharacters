@@ -21,7 +21,7 @@ def print_str(pre_id,pre_simplified,traditional_list,variant_list):
     idx_char_map[pre_id] = traditional_str + "\t" + variant_str
     #print(pre_id,pre_simplified,traditional_str,variant_str,sep="\t")
 
-for line in open("规范字与繁体字、异体字对照表.txt"):
+for line in open("规范字与繁体字、异体字对照表.txt",encoding='utf-8'):
     idx, simplified, traditional, variant = line.split("\t")
     if pre_id != idx and idx!="〃":
         if pre_id!="":
@@ -48,6 +48,6 @@ for line in open("规范字与繁体字、异体字对照表.txt"):
 
 print_str(pre_id,pre_simplified,traditional_list,variant_list)
 
-for line in open("通用规范汉字表(2013)全部(8105字).txt"):
+for line in open("通用规范汉字表(2013)全部(8105字).txt",encoding='utf-8'):
     idx = line.strip().split("\t")[0]
     print(line.strip(), idx_char_map.get(idx,"\t"), sep="\t")
